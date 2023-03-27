@@ -1,8 +1,7 @@
 from fastapi import FastAPI
 
-app = FastAPI(title="FastAPI, Docker, and CookieCuttin")
-
+app = FastAPI()
 
 @app.get("/")
-def read_root():
-    return {"hello": "world"}
+async def read_welcome():
+    return {"Hello": "{{cookiecutter.greeting_recipient}}"}
